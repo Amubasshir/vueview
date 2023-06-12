@@ -1,4 +1,13 @@
 <template>
+  <base-dialog v-if="inputIsInvalid" title="Invalid Input">
+    <template v-slot:default>
+      <p>Any one input is invalid.</p>
+      <p>Please check all the input.</p>
+    </template>
+    <template v-slot:action>
+      <base-button @click="confirmError">Close</base-button>
+    </template>
+  </base-dialog>
   <base-card>
     <form @submit.prevent="submitData">
       <div class="form-control">
@@ -26,15 +35,35 @@
 </template>
 
 <script>
+import BaseDialogue from '../UI/BaseDialogue.vue';
 export default {
+  components: { BaseDialogue },
+
   inject: ['addResource'],
+  data() {
+    return {
+      inputIsInvalid: false,
+    };
+  },
   methods: {
     submitData() {
       const enteredTitle = this.$refs.titleInput.value;
       const enteredDes = this.$refs.desInput.value;
       const enteredLink = this.$refs.linkInput.value;
 
+      if (
+        enteredTitle.trim === '' ||
+        enteredDes.trim === '' ||
+        enteredLink.trim === ''
+      ) {
+        this.inputIsInvalid = true;
+        return;
+      }
+
       this.addResource(enteredTitle, enteredDes, enteredLink);
+    },
+    confirmError() {
+      this.inputIsInvalid = false;
     },
   },
 };
