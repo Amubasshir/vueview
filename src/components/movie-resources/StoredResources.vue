@@ -12,7 +12,7 @@
 <script>
 import MovieResource from './MovieResource.vue';
 export default {
-  props: ['resources'],
+  inject: ['resources'],
   components: {
     MovieResource,
   },

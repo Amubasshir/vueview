@@ -16,25 +16,26 @@ button {
   font-family: inherit;
   background-color: transparent;
   border: 1px solid #3a0061;
-  color: rgb(247, 10, 10);
+  color: rgb(6, 84, 120);
   cursor: pointer;
 }
 
-button:hover,
+/* button:hover,
 button:active {
-  background-color: rgb(247, 10, 10);
-  border-color: #f9003a;
+  background-color: rgba(109, 113, 112, 0.283);
+  border-color: #9dc4f1;
   color: black;
-}
+} */
 
 .flat {
-  background-color: transparent;
-  color: #f9003a;
+  background-color: #3d40ecf8;
+  color: #0d71b9f8;
+  color: white;
   border: none;
 }
 
 .flat:hover,
 .flat:active {
-  background-color: #fa84a0;
+  background-color: #7f55e1;
 }
 </style>

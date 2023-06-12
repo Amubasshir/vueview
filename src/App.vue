@@ -1,35 +1,16 @@
 <template>
   <TheHeader name="MovieMania" />
-  <StoredResources :resources="storedResources" />
+  <TheRecources />
 </template>
 <script>
 import TheHeader from './components/layouts/TheHeader.vue';
-import StoredResources from './components/movie-resources/StoredResources.vue';
+import TheRecources from './components/movie-resources/TheRecources.vue';
 
 export default {
   components: {
-    StoredResources,
     TheHeader,
-    TheHeader,
-  },
-
-  data() {
-    return {
-      storedResources: [
-        {
-          id: 'welcomeqqq',
-          name: 'welcomeqqqq 2',
-          details: 'welcome to the new movie',
-          link: 'http://movie.com',
-        },
-        {
-          id: 'zawelcomeqqq',
-          name: 'welcomeqqqq 211',
-          details: 'welcome xzc zczcsdto the new movie',
-          link: 'http://movie2.com',
-        },
-      ],
-    };
+    TheRecources,
+    TheRecources,
   },
 };
 </script>
