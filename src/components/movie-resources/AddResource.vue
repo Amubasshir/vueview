@@ -35,10 +35,7 @@
 </template>
 
 <script>
-import BaseDialogue from '../UI/BaseDialogue.vue';
 export default {
-  components: { BaseDialogue },
-
   inject: ['addResource'],
   data() {
     return {
